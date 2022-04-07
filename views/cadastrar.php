@@ -29,5 +29,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
         <input type="submit" class="form__button" value="Criar">
 
+        <a href="<?php echo APP ?>">Logar</a>
+
     </form>
 </div>
