@@ -14,6 +14,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
         <div class="perfil__container">
             <h1 class="title__perfil">Bem vindo, <?php echo $_SESSION['nome'];?> </h1>
             <a class='link' href="<?php echo APP ?>usuario/sair">Sair</a>
+            <a class='link' href='<?php echo APP ?>usuario/senha'>Alterar senha</a>
         </div>
         <div class="contato__container">
             <h2 class="title__contato">Contatos</h2>

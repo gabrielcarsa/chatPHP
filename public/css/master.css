@@ -154,6 +154,15 @@
 a{
     text-decoration: none;
     color: #636e72;
+    margin-bottom: 0.5rem;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.box__opcao{
+    display: flex;
+    flex-direction: column;
 }
 
 /* PERFIL */
@@ -186,6 +195,11 @@ a{
 }
 .link{
     color: #fff;
+    margin-right: 0.5rem;
+}
+.link:hover{
+    color: #fff;
+    text-decoration: underline;
 }
 .contato__container{
     padding: 8px;
@@ -216,12 +230,12 @@ a{
     background-color: #b2bec3;
     border-radius: 0 16px 16px 0;
     box-shadow: 32px 32px 32px rgba(92,99,105,.2);
-    height: 93vh;/*Define altura da tela inteira*/
+    height: 90vh;/*Define altura da tela inteira*/
     width: 1200px;
 }
 .mensagens-form{
     position: absolute;
-    bottom: 0;
+    bottom: 33px;
     margin: 10px;
 }
 .box__mensagem{
@@ -231,6 +245,9 @@ a{
     border-radius: 16px;
     margin-left: 80px;
     padding: 10px;
+}
+.box__mensagem:focus{
+    border: 1.5px solid var(--first-color);
 }
 
 .btn__mensagem{
