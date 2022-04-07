@@ -20,7 +20,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <label for="senha" class="form__label">Senha</label>
             </div>
             <span id="validacaoErros"><?php echo(isset($dados['erroSenha'])) ? $dados['erroSenha'] : ""; ?></span>
-
+            <div id="mensagem-login">
+                <?php
+                    if(isset($dados['login'])){
+                        echo $dados['login'];
+                    }
+                ?>
+            </div>
             <input type="submit" class="form__button" value="Entrar">
 
             <a href="<?php echo APP ?>usuario/cadastrar">Cria conta</a>
@@ -28,12 +34,4 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 
     </div>
-    <div id="mensagem-login">
-        <?php
-            error_reporting(E_ALL);
-            ini_set('display_errors', '1');
-            if(isset($dados['login'])){
-                echo $dados['login'];
-            }
-        ?>
-    </div>
+
