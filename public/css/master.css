@@ -119,11 +119,12 @@
     box-shadow: 0 10px 36px rgba(0,0,0,.15);
 }
 
-#validacaoErros{
+#validacaoErros, #mensagem-login{
     font-family: var(--body-font);
     color: #b2bec3;
     padding: 2px;
-    margin-bottom: 5rem;
+    margin-bottom: 15px;
+    text-align: center;
     transition: .3s;
 }
 
