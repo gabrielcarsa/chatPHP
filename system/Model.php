@@ -8,8 +8,8 @@
     -----*/
     function getConnection() {
         $username = 'postgres';
-        $password = '';//Mudar senha para seu BD
-        $database = 'sistemaChat';//Mudar nome do seu BD
+        $password = 'ana221614a';//Mudar senha para seu BD
+        $database = 'trabalhoWeb3';//Mudar nome do seu BD
         $host = 'localhost';
         try {
             $conn = new PDO('pgsql:host='.$host.';port=5432;dbname='.$database, $username, $password);
