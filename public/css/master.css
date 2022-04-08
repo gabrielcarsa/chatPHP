@@ -1,70 +1,307 @@
+/* GOOGLE FONTS */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+/* VARIAVEIS CSS */
+:root{
+    /* Cores */
+    --first-color: #1A73E8;
+    --input-color: #80868B;
+    --border-color: #DADCE0;
+
+    /* FONTE E TIPOGRAFIA */
+    --body-font: 'Roboto', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .75rem;
+}
+
+
+
 /*--------------
     GERAL
 ----------------*/
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    
 }
 
 
 /*--------------
     NAVBAR
 ----------------*/
-
-.navbar{
-    background-color: rgb(88, 88, 211);
+.nav__container{
+    background-color: #74b9ff;
     width: 100%;
     height: 100%;
+    box-shadow: 0 10px 25px rgba(92,99,105,.2);
 }
+.navbar{
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+}
+
+.title__nav{
+    font-family: var(--body-font);
+    color: #FFF;
+    font-size: 32px;
+}
+
+/* FORM */
+.l-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form{
+    width: 360px;
+    padding: 4rem 2rem; 
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(92,99,105,.2);
+}
+.form__title{
+    font-family: var(--body-font);
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+.form__text{
+    font-family: var(--body-font);
+    margin-bottom: 3rem;
+}
+.form__div{
+    position: relative;
+    height: 48px;
+    margin-bottom: 1rem;
+    margin-top: .75rem;
+}
+.form__input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: var(--normal-font-size);
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    outline: none;
+    padding: 1rem;
+    background: none;
+    z-index: 1;
+}
+.form__label{
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0 .25rem;
+    background-color: #fff;
+    color: var(--input-color);
+    font-size: var(--normal-font-size);
+    transition: .3s;
+}
+.form__button{
+    display: block;
+    margin-left: auto;
+    margin-top: .75rem;
+    padding: .75rem 2rem;
+    outline: none;
+    border: none;
+    background-color: var(--first-color);
+    color: #fff;
+    font-size: var(--normal-font-size);
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.form__button:hover{
+    box-shadow: 0 10px 36px rgba(0,0,0,.15);
+}
+
+#validacaoErros, #mensagem-login{
+    font-family: var(--body-font);
+    color: #b2bec3;
+    padding: 2px;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: .3s;
+}
+
+
+/* input foco mover para cima da label */
+.form__input:focus + .form__label{
+    top: -.5rem;
+    left: .8rem;
+    color: var(--first-color);
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    z-index: 10;
+}
+
+/* input foco preencher label */
+.form__input:not(:placeholder-shown).form__input:not(:focus)+ .form__label{
+    top: -.5rem;
+    left: .8rem;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    z-index: 10;
+}
+
+.form__input:focus{
+    border: 1.5px solid var(--first-color);
+}
+
+a{
+    text-decoration: none;
+    color: #636e72;
+    margin-bottom: 0.5rem;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.box__opcao{
+    display: flex;
+    flex-direction: column;
+}
+
+/* PERFIL */
 
 /*--------------
     CHAT
 ----------------*/
 
 .container{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    font-family: var(--body-font);
 }
 .aside{
-    overflow:auto; 
+    overflow: hidden;
+    background-color: #dfe6e9; 
+    border-radius: 16px 0 0 16px;
+    box-shadow: -32px 32px 32px rgba(92,99,105,.2);
+}
+.perfil__container{
+    background-color: #74b9ff;
+    padding: 8px;
+    border-radius: 6px 0 0 0;
+    margin-bottom: .75rem;
+}
+.title__perfil{
+    margin-bottom: 1rem;
+}
+.link{
+    color: #fff;
+    margin-right: 0.5rem;
+}
+.link:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.contato__container{
+    padding: 8px;
+}
+.title__contato{
+    font-size: 16px;
+    margin-bottom: 1rem;
 }
 .conversa{
-    border-top: 1px solid #000;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 5px 10px rgba(92,99,105,.2);
     padding: 10px;
+    margin-bottom: 10px;
+}
+
+.conversa:hover{
+    background: rgba(255, 255, 255, 0.575);
+}
+
+.title__conversa{
+    margin-bottom: .5rem;
+}
+.link__conversa{
+    padding: 32px 64px 0 0;
 }
 .mensagens{
-    border-left: 1px solid #000;
-    background-color: rgb(0, 255, 136);
-    height: 93vh;/*Define altura da tela inteira*/
+    background-color: #b2bec3;
+    border-radius: 0 16px 16px 0;
+    box-shadow: 32px 32px 32px rgba(92,99,105,.2);
+    height: 90vh;/*Define altura da tela inteira*/
+    width: 1200px;
 }
 .mensagens-form{
     position: absolute;
-    bottom: 0;
+    bottom: 33px;
     margin: 10px;
 }
+.box__mensagem{
+    width: 1000px;
+    height: 40px;
+    border: none;
+    border-radius: 16px;
+    margin-left: 80px;
+    padding: 10px;
+}
+.box__mensagem:focus{
+    border: 1.5px solid var(--first-color);
+}
+
+.btn__mensagem{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 32px;
+    background: #FFF;
+    cursor: pointer;
+    top: 8px;
+    margin-left: 8px;
+}
+.btn{
+    margin-right: 6px;
+    color: #74b9ff;
+    font-size: 2rem;
+}
+
 .texto1{
-    background-color: rgb(34, 103, 233);
-    margin: 10px 25% 10px;
+    background-color: #0984e3;
+    margin: 10px 800px 10px;
+    color: #FFF;
 }
 .texto2{
-    background-color: rgb(153, 34, 233);
-    margin: 10px;
+    background-color: #74b9ff;
+    margin: 10px 0 10px 70px;
+    color: #FFF;
 }
 .texto1 div, .texto2 div{
     display: flex;
-    color: #FFFF;
+    color: #dfe6e9;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+.mensagens-textos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 32px;
 }
 .mensagens-textos a{
     position: absolute;
     right: 20px;
-    background-color: #FFFF;
+    bottom: 1px;
     padding: 2px;
     border-radius: 1em;
-    color: red;
+    color: #dfe6e9;
+    font-size: 1.5rem;
 }
 .texto1, .texto2{
     position: relative;
-    width: 70%;
+    width: 320px;
     padding: 10px;
     border-radius: 1em;
 }

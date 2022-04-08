@@ -159,12 +159,8 @@
       }
 
     }
-<<<<<<< HEAD
 
 
-=======
-    
->>>>>>> master
     /*-------
     FUNÇÃO PARA DESLOGAR USUÁRIO
     -------*/

@@ -5,40 +5,33 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 ?>
-<nav class="navbar">
-    <h1>Edite o menu Nav</h1>
-    <ul>
-        <li><a href="<?php echo APP ?>">Login</a></li>
-        <li><a href="<?php echo APP ?>usuario/cadastrar">Cadastrar</a></li>
-    </ul>
-</nav>
 
-<div>
-    <h2>Fazer Login</h2>
-    <p>Faça Login para acessar o chat</p>
-</div>
+    <div class="l-form">
+        <form class="form" action="<?php echo APP?>usuario/logar" method="post">
+            <h1 class="form__title">Fazer Login</h1>
+            <p class="form__text">Faça Login para acessar o chat</p>
+            <div class="form__div">
+                <input type="email" class="form__input" name="email" value="<?php echo(isset($dados['email'])) ? $dados['email'] : ""; ?>" id="emailInput" require autocomplete="off" placeholder=" ">
+                <label for="email" class="form__label">Email</label> 
+            </div>
+            <span id="validacaoErros"><?php echo(isset($dados['erroEmail'])) ? $dados['erroEmail'] : ""; ?></span>
+            <div class="form__div">
+                <input type="password" class="form__input" name="senha" id="senhaInput" require placeholder=" ">
+                <label for="senha" class="form__label">Senha</label>
+            </div>
+            <span id="validacaoErros"><?php echo(isset($dados['erroSenha'])) ? $dados['erroSenha'] : ""; ?></span>
+            <div id="mensagem-login">
+                <?php
+                    if(isset($dados['login'])){
+                        echo $dados['login'];
+                    }
+                ?>
+            </div>
+            <input type="submit" class="form__button" value="Entrar">
 
-<form action="<?php echo APP?>usuario/logar" method="post">
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" value="<?php echo(isset($dados['email'])) ? $dados['email'] : ""; ?>" id="emailInput" require autocomplete="off" placeholder="Digite seu email">
-        <span id="validacaoErros"><?php echo(isset($dados['erroEmail'])) ? $dados['erroEmail'] : ""; ?></span>
+            <a href="<?php echo APP ?>usuario/cadastrar">Cria conta</a>
+        </form>
+
+
     </div>
-    <div>
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senhaInput" require placeholder="Digite sua senha">
-        <span id="validacaoErros"><?php echo(isset($dados['erroSenha'])) ? $dados['erroSenha'] : ""; ?></span>
-    </div>
-    <div>
-        <button type="submit">Entrar</button>
-    </div>
-</form>
-<div id="mensagem-login">
-    <?php
-        error_reporting(E_ALL);
-        ini_set('display_errors', '1');
-        if(isset($dados['login'])){
-            echo $dados['login'];
-        }
-    ?>
-</div>
+

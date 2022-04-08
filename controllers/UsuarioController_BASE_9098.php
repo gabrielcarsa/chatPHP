@@ -114,57 +114,7 @@
         $this->view("index", $dados);
       }
     }
-
-    /*-------
-    FUNÇÃO VISUALIZAR FORM MUDAR SENHA
-    -------*/
-    function senha(){
-      session_start();
-      $dados = array();
-      $this->view("logado/senha", $dados);
-  }
-
-   /*-------
-    FUNÇÃO PARA ATUALIZAR SENHA USUÁRIO
-    -------*/
-    function atualizarSenha(){
-      $dados = array();
-      session_start();
-      $id = $_SESSION['id'];
-      $dados['id'] = $id;
-
-       // Validar senha
-       if(empty(trim($_POST["senha"]))){
-        $erro = "Por favor insira uma senha.";  
-        $dados['erroSenha'] = $erro;
-      } elseif(strlen(trim($_POST["senha"])) < 6){
-          $erro = "A senha deve ter pelo menos 6 caracteres.";
-          $dados['erroSenha'] = $erro;
-      } else{
-          $dados['senha'] = $_POST['senha'];
-          $dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT); // Cria um hash para a senha
-      }
-
-      if(!isset($dados['erroSenha'])){
-          $model = new Usuario();
-          $model->update($dados);
-          echo "
-            <script>
-                alert('Senha alterada com sucesso!');
-                window.location.href = '".APP."mensagem/chat';
-            </script>
-          ";
-      }else{
-        $this->view("logado/senha", $dados);
-      }
-
-    }
-<<<<<<< HEAD
-
-
-=======
     
->>>>>>> master
     /*-------
     FUNÇÃO PARA DESLOGAR USUÁRIO
     -------*/
