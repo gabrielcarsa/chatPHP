@@ -2,7 +2,7 @@
     include_once "autoload.php";
 
     //diretório do projeto
-    define ("APP", "http://localhost/web3/trabalho/");
+    define ("APP", "http://localhost/sistemaChat/");
 
     $url = !isset($_GET['url']) ? "index/index" : $_GET['url'];
 
